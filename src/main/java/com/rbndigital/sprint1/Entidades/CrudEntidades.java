@@ -6,14 +6,14 @@ import javax.persistence.Id;
 @Entity
 public class CrudEntidades {
     @Id
-	private int codCurso;
+	private Long codCurso;
 	private String Grado;
 	private String Grupo;
 	
-	public int getCodCurso() {
+	public Long getCodCurso() {
 		return codCurso;
 	}
-	public void setCodCurso(int codCurso) {
+	public void setCodCurso(Long codCurso) {
 		this.codCurso = codCurso;
 	}
 	public String getGrado() {
