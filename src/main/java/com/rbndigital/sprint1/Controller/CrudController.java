@@ -13,7 +13,7 @@ public class CrudController {
 	@Autowired
 	private CrudServicio cursoService;
 	
-	@GetMapping("/votantes")
+	@GetMapping("/siaG42")
 	public String seleccionarCursos(Model model)
 	{
 		try {
