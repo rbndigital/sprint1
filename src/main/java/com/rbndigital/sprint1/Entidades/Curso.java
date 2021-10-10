@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class CrudEntidades {
+public class Curso {
     @Id
 	private int codCurso;
 	private String Grado;

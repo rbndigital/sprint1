@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.rbndigital.sprint1.Entidades.CrudEntidades;
+import com.rbndigital.sprint1.Entidades.Curso;
 import com.rbndigital.sprint1.Servicios.CrudServicio;
 
 @Controller
@@ -17,7 +17,7 @@ public class CrudController {
 	public String seleccionarCursos(Model model)
 	{
 		try {
-			List<CrudEntidades> listaCursos = cursoService.findAll();
+			List<Curso> listaCursos = cursoService.findAll();
 			model.addAttribute("cursos", listaCursos);
 		}catch(Exception e) {
 			System.out.println("Error: "+e.getCause());
