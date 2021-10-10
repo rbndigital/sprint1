@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 import com.rbndigital.sprint1.Entidades.CrudEntidades;
 
 @Repository
-public interface CrudServicio extends JpaRepository<CrudEntidades, Long> {
+public interface CrudServicio extends JpaRepository<CrudEntidades, Integer> {
 
 }
 
