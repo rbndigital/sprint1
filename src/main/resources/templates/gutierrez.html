@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOMBIA ELIGE 2022</title>
+
+    <!--Estilos aplicados-->
+    
+   
+    
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css}" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/main.css}" rel="stylesheet"><!--hoja de estilos principal-->
+    <link th:href="@{/css/estilo.css}" rel="stylesheet">
+    <!--fonts-->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}"><!--hoja de estilos de google para las fuentes-->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin><!--hoja de estilos de google para las fuentes-->
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Ruthie&display=swap}" rel="stylesheet"><!--hoja de estilos de google para las fuentes-->
+    </head>
+<style>
+
+  th, td {
+    text-align: center;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .Contenedor {
+    width: 100%;
+    max-width:2000px;
+    margin:0 auto;
+    overflow: hidden;
+   
+  }
+
+  </style>
+<body>
+  <div class="Contenedor">  
+    <div class="Contenedor banner"></div>
+    <div>
+        <header><br><br>
+                <p class="bannerText">
+                    &nbsp;¡Colombia Elige 2022!
+                    <img src="/img/bandera.png" width="65" height="65" alt="Bandera" title="Colombia" />
+ 
+
+                </p>
+                <center><p class="bannerText2"><strong>
+                    En éste espacio podrá informarse sobre la participación e impacto territorial de los candidatos en las próximas elecciones presidenciales en Colombia en el 2022.</strong>
+                </p></center>
+                
+            </p>
+        </header>
+    </div>
+    <div>
+        <ul class="Contenedor nav nav-pills justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" th:href="@{siaG42}"><font size="4px">Candidatos</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{estadisticas}"><font size="4px">Estadísticas</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{registro}"><font size="4px">Registro</font></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{Votación}"><font size="4px">Votaciones</font></a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{acercaDe}"><font size="4px">Acerca de</font></a>
+          </li>
+            </ul>
+    </div><br/>
+
+
+        <section>
+            <div class="container sobre " style="width:900px;padding:16px;">
+                <div class="row" style="padding:0;">
+                    <div class="col-lg-4 col-md-6 text-center col-sm-12">
+                        <figure>
+                            <img src="/img/candidato 3.jpg" width="280x">
+                        </figure>
+                    </div>
+
+                    <div class="col-lg-8 col-md-6  col-sm-12" >
+                        <h4>FEDERICO GUTIÉRREZ ZULUAGA – Coalición de las regiones - Creemos Colombia</h4>
+                        <p align="justify">A los 28 años, fue elegido en el año 2003 concejal por el Nuevo Partido, para el período 2004 – 2007, donde tuvo la oportunidad de ocupar el cargo de vicepresidente primero, apoyando al candidato y alcalde Sergio Fajardo; en 2007 consiguió reelegirse como concejal de la ciudad para el período 2008 – 2011 por el Partido de la U consiguiendo 14 mil votos (la mayor votación). Fue presidente del concejo de Medellín en 2008 y en 2009 fue elegido como Joven sobresaliente del año en Colombia en la categoría asuntos políticos, legales y gubernamentales, reconocimiento otorgado por la Cámara Junior de Colombia.</p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-12 col-md-6  col-sm-12">
+                        <h3>Partido político:</h3>
+                        <img src="/img/Creemos colombia.png" width="150">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row tex">
+                    <div class="col-12-lg">
+                        <a class="nav-link active" aria-current="page" th:href="@{siaG42}">
+                            <font size="5px">Volver</font>
+                        </a>   
+
+                    </div>
+                </div>
+            </div><br/>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col-10 offset-1">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-6 col-sm-12">
+                      <h5>Colombia Elige 2022 ®</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 sociales">
+                      <h5>Síguenos en:&nbsp;&nbsp;&nbsp;&nbsp;
+                      
+                          <i class="fas fa-vote-yea"></i>
+                          <i class="fab fa-instagram"></i>
+                          <i class="fab fa-twitter"></i>
+                          <i class="fab fa-facebook"></i>
+                        
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>                
+              
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

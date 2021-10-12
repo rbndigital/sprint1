@@ -1,11 +1,164 @@
-@charset "UTF-8";
 
-body{
-	width: 900px;
-	margin: 30 auto;
+
+.sobre{
+    padding:5px;
+    border-radius: 1em;
+    transition:all 0.4s ease;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+
+    
+  }
+  
+.sobre:hover{
+    transition:all 0.4s ease;
+    -webkit-box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75);
+    box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75)
+  }
+
+.sobreinicio{
+    padding:15px;
+    border-radius: 1em;
+    transition:all 0.4s ease;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.075)
+  }
+  
+.sobreinicio:hover{
+    width:300px;
+    height: 300px;
+    transition:all 0.4s ease;
+    -webkit-box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75);
+    box-shadow:0px 4px 20px -5px rgba(0,0,0,0.75)
+  }
+  .mapadiv{
+    width: 80%;
+    margin-right: 0%;
+  }
+
+  .mapadiv path{
+    fill: #ffffff;
+    stroke: #575757;
+    stroke-width: 2PX;
+  }
+
+  .mapadiv :hover{
+    fill: #800000;
+  }
+
+  section {
+    padding-top: 10px;
+  }
+
+/*colores por regiones*/
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Pacífica*/
+#COL1404, #COL1406, #COL1415, #COL1408{
+  fill: #FF7400;
+}
+/*Pacífica-hover*/
+#COL1404:hover, #COL1406:hover, #COL1415:hover, #COL1408:hover{
+  fill: #ff5100;
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Orinoquía*/
+#COL1425, #COL1427, #COL1422, #COL1420{
+  fill: #FFF000;
+}
+/*Orinoquía-hover*/
+#COL1425:hover, #COL1427:hover, #COL1422:hover, #COL1420:hover{
+  fill: #ffd900;
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Andina*/
+#COL1421,#COL1405,#COL1402,#COL1401,#COL1398,#COL1397,#COL1317,#COL1315,#COL1314,#COL1400,#COL1399{
+  fill: #00C1FF;
+}
+/*Andina-hover*/
+#COL1421:hover,#COL1405:hover,#COL1402:hover,#COL1401:hover,#COL1398:hover,#COL1397:hover,#COL1317:hover,#COL1315:hover,#COL1314:hover,#COL1400:hover,#COL1399:hover{
+  fill: #0084ff;
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Caribe*/
+#COL1316,#COL1318,#COL1412,#COL1413,#COL1414,#COL1416,#COL1417{
+  fill: #FF0000;
+}
+/*Caribe-hover*/
+#COL1316:hover,#COL1318:hover,#COL1412:hover,#COL1413:hover,#COL1414:hover,#COL1416:hover,#COL1417:hover{
+  fill: #950000;
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Amazonía*/
+#COL1283,#COL1403,#COL1407,#COL1424,#COL1426,#COL1423{
+  fill: #00F10B;
+}
+/*Amazonía-hover*/
+#COL1283:hover,#COL1403:hover,#COL1407:hover,#COL1424:hover,#COL1426:hover,#COL1423:hover{
+  fill: #007206;
 }
 
-h6{
-	color: blue;
+.color1{
+  background-color: #fc22228f;
+}
+.color2{
+  background-color: #00bfff65;
+}
+.color3{
+  background-color: #ff5e005e;
+}
+.color4{
+  background-color: #ffd00063;
+}
+.color5{
+  background-color: #2ad10060;
+}
+.color6{
+  background-color: #8622f863;
 }
 
+table{
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 5px 10px;
+}
+
+.container{
+  padding: 1em 2em;
+}
+
+@media (max-width:30em){
+  table {
+    width: 100%;
+    font-size: .9em;
+  }
+  table tr{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  table thead{
+    display: none;
+  }
+  table td[data-titulo]{
+    display: flex;
+  }
+  table td{
+    border: none;
+  }
+  table td[data-titulo]::before{
+    content: attr(data-titulo);
+    width: 200px;
+    -webkit-text-stroke: 1px black;
+    color: grey;
+    font-weight: bold;
+  }
+
+  .bannerText{
+    font-size: calc(3em + 1vw)
+  }
+}
