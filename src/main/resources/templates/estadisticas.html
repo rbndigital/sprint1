@@ -57,7 +57,7 @@
     <div>
             <ul class="Contenedor nav nav-pills justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" th:href="@{siaG42}"><font size="4px">Candidatos</font></a>
+                <a class="nav-link" th:href="@{index}"><font size="4px">Candidatos</font></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#"><font size="4px">Estadísticas</font></a>
@@ -68,6 +68,9 @@
             <li class="nav-item">
               <a class="nav-link" th:href="@{Votación}"><font size="4px">Votaciones</font></a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{votantes}"><font size="4px">Votantes</font></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{acercaDe}"><font size="4px">Acerca de</font></a>
           </li>
@@ -95,7 +98,7 @@
                             <p style="text-align: justify;">El objetivo de la siguiente tabla es proporcionar un análisis cuantitativo de los resultados electorales 2022, tomando como insumo los votos por región sujetos a escrutinio.</p>
                 
                             <div class="row">
-                                <div class="col-12 col-lg-2 border bg-primary"></div>
+                                <div class="col-12 col-lg-2 bg-primary"></div>
                                     <table class="table">
                                         <thead class="thead-dark">
                                             <tr>

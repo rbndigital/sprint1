@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOMBIA ELIGE 2022</title>
+
+    <!--Estilos aplicados-->
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css}"
+        referrerpolicy="no-referrer" />
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+    <!--hoja de estilos principal-->
+    <link th:href="@{/css/estilo.css}" rel="stylesheet">
+    <!--fonts-->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <!--hoja de estilos de google para las fuentes-->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <!--hoja de estilos de google para las fuentes-->
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap}"
+        rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Ruthie&display=swap}" rel="stylesheet">
+    <!--hoja de estilos de google para las fuentes-->
+</head>
+<style>
+    th,
+    td {
+        text-align: center;
+        padding: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .Contenedor {
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        overflow: hidden;
+
+    }
+</style>
+
+<body>
+    <div class="Contenedor">
+        <div class="Contenedor banner"></div>
+        <div>
+            <header><br><br>
+                <p class="bannerText">
+                    &nbsp;¡Colombia Elige 2022!
+                    <img src="/img/bandera.png" width="65" height="65" alt="Bandera" title="Colombia" />
+
+
+                </p>
+                <center>
+                    <p class="bannerText2"><strong>
+                            En éste espacio podrá informarse sobre la participación e impacto territorial de los
+                            candidatos en las próximas elecciones presidenciales en Colombia en el 2022.</strong>
+                    </p>
+                </center>
+
+                </p>
+            </header>
+        </div>
+        <div>
+            <ul class="Contenedor nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{index}">
+                        <font size="4px">Candidatos</font>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{estadisticas}">
+                        <font size="4px">Estadísticas</font>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{registro}">
+                        <font size="4px">Registro</font>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{Votación}">
+                        <font size="4px">Votaciones</font>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <font size="4px">Votantes</font>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{acercaDe}">
+                        <font size="4px">Acerca de</font>
+                    </a>
+                </li>
+            </ul>
+        </div><br />
+
+
+        <section>
+            <div class="container">
+                <h1 class="text-center mb-5 mt-3">Registro de Votantes</h1>
+                <div class="row">
+                    <form class="card pt-5 mb-5 rounded shadow-sm">
+
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Identificación" class="form-label">No. Identificación:</label>
+                            <input type='number' class="ms-2 form-control"><br />
+                        </div>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Nombres" class="form-label">Nombres:</label>
+                            <input type="text" class="ms-2 form-control"/><br />
+                        </div>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Apellidos" class="form-label">Apellidos:</label>
+                            <input type="text" class="ms-2 form-control"/><br />
+                        </div>   
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Correo" class="form-label">Correo:</label>
+                            <input type="text" class="ms-2 form-control"/><br />
+                        </div>  
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="NumContacto" class="form-label">Número de Contacto:</label>
+                            <input type='number' class="ms-2 form-control"/><br />
+                        </div>  
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Dirección" class="form-label">Dirección:</label>
+                            <input type="text" class="ms-2 form-control"/><br />
+                        </div>  
+
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Municipio" class="form-label">Municipio:</label>
+                            <input type="text" class="ms-2 form-control" /><br />
+                        </div> 
+
+                        <div class="row justify-content-end">
+                            <div class="col-xs-12 col-md-4">
+                              <input
+                                type="submit"
+                                value="Registrar"
+                                class="btn btn-primary mt-3 mb-4"
+                              />
+                            </div>
+                          </div>
+                    </form>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Identificación</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Número de Contacto</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Municipio</th>
+                          </tr>
+                        </thead>
+
+                     
+                          <tr th:each="votantes:${votantes}">
+                            <td><h6 th:text="${votantes.id}"></h6></td>
+                            <td><h6 th:text="${votantes.Identificacion}"></h6></td>
+                            <td><h6 th:text="${votantes.Nombres}"></h6></td>
+                            <td><h6 th:text="${votantes.Apellidos}"></h6></td>
+                            <td><h6 th:text="${votantes.Correo}"></h6></td>
+                            <td><h6 th:text="${votantes.NumContacto}"></h6></td>
+                            <td><h6 th:text="${votantes.Direccion}"></h6></td>
+                            <td><h6 th:text="${votantes.Municipio}"></h6></td>
+                          </tr>
+                          
+
+                     
+                      </table>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <h5>Colombia Elige 2022 ®</h5>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 sociales">
+                                <h5>Síguenos en:&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <i class="fas fa-vote-yea"></i>
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-twitter"></i>
+                                    <i class="fab fa-facebook"></i>
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

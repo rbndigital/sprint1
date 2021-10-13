@@ -3,30 +3,35 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.rbndigital.sprint1.Entidades.Curso;
+import com.rbndigital.sprint1.Entidades.Votantes;
 import com.rbndigital.sprint1.Servicios.CrudServicio;
 
 @Controller
 public class CrudController {
 	
 	@Autowired
-	private CrudServicio cursoService;
+	private CrudServicio crudservicio;
 	
-	@GetMapping("/siaG42")
-	public String seleccionarCursos(Model model){
-		try {
-			List<Curso> listaCursos = cursoService.findAll();
-			model.addAttribute("cursos", listaCursos);
-		}catch(Exception e) {
-			System.out.println("Error: "+e.getCause());
-		}
-		
-		return "index";
-	}
 
+	@GetMapping("/votantes")
+	public String visualizarVotantes(Model model) {
+		try {
+			List<Votantes> listaVotantes = crudservicio.findAll();
+			model.addAttribute("votantes", listaVotantes);
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getCause());
+		}
+		return "votantes";
+	}
+	@RequestMapping("/index")
+	public ModelAndView index() {
+		return new ModelAndView("index");
+	}
 	@RequestMapping("/estadisticas")
 	public ModelAndView estadisticas() {
 		return new ModelAndView("estadisticas");
@@ -71,4 +76,5 @@ public class CrudController {
 	public ModelAndView acercaDe() {
 		return new ModelAndView("acercaDe");
 	}
+
 }
