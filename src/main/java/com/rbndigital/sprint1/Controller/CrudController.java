@@ -20,14 +20,30 @@ public class CrudController {
 
 	@GetMapping("/votantes")
 	public String visualizarVotantes(Model model) {
+		model.addAttribute("votantes", new Votantes());
 		try {
 			List<Votantes> listaVotantes = crudservicio.findAll();
+			
 			model.addAttribute("votantes", listaVotantes);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getCause());
 		}
+		
 		return "votantes";
 	}
+
+	@GetMapping("/nuevoVotante")
+	public String addVotante(Model model) {
+		model.addAttribute("votantes", new Votantes());
+		return "/regVotantes";
+	}
+	@PostMapping("/saveVotantes")
+	public String addVotantes(@Validated Votantes votantes) {
+		crudservicio.save(votantes);
+		return "redirect:/votantes";
+	}
+
+
 	@RequestMapping("/index")
 	public ModelAndView index() {
 		return new ModelAndView("index");
