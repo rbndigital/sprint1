@@ -142,7 +142,7 @@
 
                      
                           <tr th:each="votantes:${votantes}">
-                            <td><a th:href="@{modVotantes/}+${votantes.id}">Editar</a></td>
+                            <td><a th:href="@{modVotantes/}+${votantes.id}">Editar</a> | <a th:href="@{eliminarVotante/}+${votantes.id}">Eliminar</a></td>
                             <td><h6 th:text="${votantes.id}"></h6></td>
                             <td><h6 th:text="${votantes.Identificacion}"></h6></td>
                             <td><h6 th:text="${votantes.Nombres}"></h6></td>

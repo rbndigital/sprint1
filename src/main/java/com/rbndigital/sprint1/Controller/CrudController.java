@@ -40,8 +40,9 @@ public class CrudController {
 		return "/regVotantes";
 	}
 	@PostMapping("/saveVotantes")
-	public String addVotantes(@Validated Votantes votantes) {
+	public String addVotantes(@Validated Votantes votantes) throws InterruptedException {
 		crudservicio.save(votantes);
+		Thread.sleep(2*1000);
 		return "redirect:/votantes";
 	}
 
@@ -51,9 +52,12 @@ public class CrudController {
 			model.addAttribute("votantes",votantes.get());
 			return "/modVotantes";
 		}
-	
 
-
+	@GetMapping("/eliminarVotante/{id}")
+		public String eliminar(@PathVariable int id){
+			crudservicio.deleteById(id);
+			return "redirect:/votantes";
+		}		
 
 	@RequestMapping("/index")
 	public ModelAndView index() {

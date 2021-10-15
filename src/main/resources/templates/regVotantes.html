@@ -23,6 +23,14 @@
         rel="stylesheet">
     <link th:href="@{https://fonts.googleapis.com/css2?family=Ruthie&display=swap}" rel="stylesheet">
     <!--hoja de estilos de google para las fuentes-->
+
+    <script type="text/javascript">
+        function mensaje(){
+            swal("¡Registro realizado!", "¡La información se ha registrado correctamente!", "success");
+        }
+    </script>
+
+
 </head>
 <style>
     th,
@@ -140,6 +148,7 @@
                                 type="submit"
                                 value="Registrar"
                                 class="btn btn-primary mt-3 mb-4"
+                                onclick="javascript: mensaje()"
                               />
                             </div>
                           </div>
@@ -174,6 +183,7 @@
         </footer>
 
     </div>
+    <script th:src="@{https://unpkg.com/sweetalert/dist/sweetalert.min.js}"></script>
 </body>
 
 </html>
