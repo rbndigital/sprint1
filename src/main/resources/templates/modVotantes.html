@@ -39,13 +39,6 @@
         overflow: hidden;
 
     }
-    .container {
-        height: 100%;
-        margin: 0 auto;
-        min-height: 600px;
-        overflow: hidden;
-
-    }
 </style>
 
 <body>
@@ -107,52 +100,54 @@
 
         <section>
             <div class="container">
-                <h1 class="text-center mb-5 mt-3">Listado de Votantes</h1>
+                <h1 class="text-center mb-5 mt-3">Registro de Votantes</h1>
                 <div class="row">
+                    <form class="card pt-5 mb-5 rounded shadow-sm" th:action="@{/saveVotantes}" method="post" th:object="${votantes}" name="Vot">
 
-                    <div class="row justify-content-end">
-                        <div class="col-xs-12 col-md-12">
-                            <a th:href="@{nuevoVotante}">
-                          <input
-                            type="submit"
-                            value="Agregar Votante"
-                            class="btn btn-primary mt-3 mb-4"
-                          />
-                        </a>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Identificacion" class="form-label">No. Identificación:</label>
+                            <input type='number' class="ms-2 form-control" th:value="*{Identificacion}" id="Identificacion" name="Identificacion" required><br />
                         </div>
-                      </div>
-                    
-                    
-                    
-                    <br/><br/>
-                    <table class="table">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Id</th>
-                            <th scope="col">Identificación</th>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Número de Contacto</th>
-                            <th scope="col">Dirección</th>
-                            <th scope="col">Municipio</th>
-                          </tr>
-                        </thead>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Nombres" class="form-label">Nombres:</label>
+                            <input type="text" class="ms-2 form-control" th:value="*{Nombres}" id="Nombres" name="Nombres" required/><br />
+                        </div>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Apellidos" class="form-label">Apellidos:</label>
+                            <input type="text" class="ms-2 form-control" th:value="*{Apellidos}" id="Apellidos" name="Apellidos" required/><br />
+                        </div>   
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Correo" class="form-label">Correo:</label>
+                            <input type="text" class="ms-2 form-control" th:value="*{Correo}" id="Correo" name="Correo" required/><br />
+                        </div>  
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="NumContacto" class="form-label">Número de Contacto:</label>
+                            <input type='number' class="ms-2 form-control" th:value="*{NumContacto}" id="NumContacto" name="NumContacto" required/><br />
+                        </div>  
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Dirección" class="form-label">Dirección:</label>
+                            <input type="text" class="ms-2 form-control" th:value="*{Direccion}" id="Direccion" name="Direccion" required/><br />
+                        </div>  
 
-                     
-                          <tr th:each="votantes:${votantes}">
-                            <td><a th:href="@{modVotantes/}+${votantes.id}">Editar</a></td>
-                            <td><h6 th:text="${votantes.id}"></h6></td>
-                            <td><h6 th:text="${votantes.Identificacion}"></h6></td>
-                            <td><h6 th:text="${votantes.Nombres}"></h6></td>
-                            <td><h6 th:text="${votantes.Apellidos}"></h6></td>
-                            <td><h6 th:text="${votantes.Correo}"></h6></td>
-                            <td><h6 th:text="${votantes.NumContacto}"></h6></td>
-                            <td><h6 th:text="${votantes.Direccion}"></h6></td>
-                            <td><h6 th:text="${votantes.Municipio}"></h6></td>
-                          </tr>
-                      </table>
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <label for="Municipio" class="form-label">Municipio:</label>
+                            <input type="number" class="ms-2 form-control"th:value="*{Municipio}" id="Municipio" name="Municipio" required /><br />
+                        </div> 
+
+                        <div class="col-xs-12 col-md-6 offset-md-3">
+                            <input type="hidden" class="ms-2 form-control"th:value="*{Id}" id="Id" name="Id" required /><br />
+                        </div> 
+
+                        <div class="row justify-content-end">
+                            <div class="col-xs-12 col-md-4">
+                              <input
+                                type="submit"
+                                value="Modificar"
+                                class="btn btn-primary mt-3 mb-4"
+                              />
+                            </div>
+                          </div>
+                    </form>
                 </div>
             </div>
         </section>
