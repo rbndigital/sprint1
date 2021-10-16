@@ -59,9 +59,10 @@ public class CrudController {
 			return "redirect:/votantes";
 		}		
 
-	@RequestMapping("/index")
-	public ModelAndView index() {
-		return new ModelAndView("index");
+	@GetMapping("/index")
+	public String index(Model model) {
+		model.addAttribute("votantes", new Votantes());
+		return "/index";
 	}
 	@RequestMapping("/estadisticas")
 	public ModelAndView estadisticas() {
