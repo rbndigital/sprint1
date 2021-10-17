@@ -1,0 +1,3 @@
+INSERT INTO votantes(id,identificacion,nombres,apellidos,correo,numContacto,direccion,municipio) VALUES(1,1065652345,'Ruben1','Ramirez1','rbndigital1@gmail.com','3173900829','Calle 13 Abis #4-71','Cesar');
+INSERT INTO votantes(id,identificacion,nombres,apellidos,correo,numContacto,direccion,municipio) VALUES(2,1065652342,'Ruben2','Ramirez2','rbndigital2@gmail.com','3173900829','Calle 13 Abis #4-71','Cesar');
+INSERT INTO votantes(id,identificacion,nombres,apellidos,correo,numContacto,direccion,municipio) VALUES(3,1065652343,'Ruben3','Ramirez3','rbndigital3@gmail.com','3173900829','Calle 13 Abis #4-71','Cesar');
