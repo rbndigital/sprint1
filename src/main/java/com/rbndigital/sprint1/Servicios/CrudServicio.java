@@ -6,6 +6,8 @@ import com.rbndigital.sprint1.Entidades.Votantes;
 @Repository
 public interface CrudServicio extends JpaRepository<Votantes, Integer> {
 
+    public Votantes findFirstByIdentificacion(int Identificacion);
+
 }
 
 

@@ -76,6 +76,29 @@
           </li>
             </ul>
     </div><br/>
+
+    <div th:fragment="datos-cliente">
+			
+		<div id="form_buscar_votante">
+      <form th:action="@{/buscarVotante}" method="post">
+		
+				<div class="row">
+					<div class="col-md-8 offset-2">
+						<label for="identificacion">Buscar votante</label>
+						<input name="Identificacion" th:fiel="*{Identificacion}" id="buscar_votante"
+											 placeholder="Presiona enter para buscar"
+											 type="number" class="form-control" autofocus="autofocus" required>
+            
+            <div th:classappend="'mt-3 '+'alert-' + (${clase != null} ? ${clase} : info)" th:if="${votante == null}"
+                 th:text="(${mensaje != null} ? ${mensaje}:'Escríbe la identificacion del votante y presiona enter para buscar')"
+                 class="alert">
+            </div>
+          
+					</div>
+				</div>
+			</form>
+			<hr>
+		</div>
        
         <section>
             <div class="container">

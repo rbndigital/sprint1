@@ -2,19 +2,22 @@ package com.rbndigital.sprint1.Entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class Votantes {
     @Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;	
-	private int Identificacion;	
+
+	private int identificacion;	
 	private String Nombres;
 	private String Apellidos;
 	private String Correo;
 	private String NumContacto;
 	private String Direccion;
-	private int Municipio;
+	private String Municipio;
 	
 	public int getId() {
 		return id;
@@ -23,10 +26,10 @@ public class Votantes {
 		this.id = id;
 	}
 	public int getIdentificacion() {
-		return Identificacion;
+		return identificacion;
 	}
 	public void setIdentificacion(int identificacion) {
-		Identificacion = identificacion;
+		this.identificacion = identificacion;
 	}
 	public String getNombres() {
 		return Nombres;
@@ -58,17 +61,17 @@ public class Votantes {
 	public void setDireccion(String direccion) {
 		Direccion = direccion;
 	}
-	public int getMunicipio() {
+	public String getMunicipio() {
 		return Municipio;
 	}
-	public void setMunicipio(int municipio) {
+	public void setMunicipio(String municipio) {
 		Municipio = municipio;
 	}
 
 	@Override
 	public String toString() {
 		return "Votantes [id = " + id + 
-		", Identificacion=" + Identificacion +
+		", Identificacion=" + identificacion +
 		", Nombres=" + Nombres +
 		", Apellidos=" + Apellidos +
 		", Correo=" + Correo +
