@@ -37,7 +37,7 @@ public class CrudController {
 		public String Editar(@PathVariable int id,Model model){
 			Optional<Votantes> votantes = crudservicio.findById(id);
 			model.addAttribute("votantes",votantes.get());
-			return "/modVotantes";
+			return "modVotantes";
 		}
 
 	@GetMapping("/nuevoVotante")
@@ -51,8 +51,6 @@ public class CrudController {
 		Thread.sleep(2*1000);
 		return "redirect:/votantes";
 	}
-
-
 
 	@GetMapping("/eliminarVotante/{id}")
 		public String eliminar(@PathVariable int id){
