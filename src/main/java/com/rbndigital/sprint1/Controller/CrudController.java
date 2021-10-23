@@ -25,7 +25,6 @@ public class CrudController {
 		model.addAttribute("votantes", new Votantes());
 		try {
 			List<Votantes> listaVotantes = crudservicio.findAll();
-			
 			model.addAttribute("votantes", listaVotantes);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getCause());
@@ -33,6 +32,13 @@ public class CrudController {
 		
 		return "votantes";
 	}
+
+	@GetMapping("/modVotantes/{id}")
+		public String Editar(@PathVariable int id,Model model){
+			Optional<Votantes> votantes = crudservicio.findById(id);
+			model.addAttribute("votantes",votantes.get());
+			return "modVotantes";
+		}
 
 	@GetMapping("/nuevoVotante")
 	public String addVotante(Model model) {
@@ -46,46 +52,32 @@ public class CrudController {
 		return "redirect:/votantes";
 	}
 
-	@GetMapping("/modVotantes/{id}")
-		public String Editar(@PathVariable int id,Model model){
-			Optional<Votantes> votantes = crudservicio.findById(id);
-			model.addAttribute("votantes",votantes.get());
-			return "/modVotantes";
-		}
-
 	@GetMapping("/eliminarVotante/{id}")
 		public String eliminar(@PathVariable int id){
 			crudservicio.deleteById(id);
 			return "redirect:/votantes";
 	}
 	
-	@PostMapping("/buscarVotante")
+	@GetMapping("/buscarVotante")
 		public String buscarVotantePorIdentificacion(Votantes votantes,Model model){
-			
 			String urlTemplate = "/index";
-
 			model.addAttribute("mensaje","Error.., el votante no esta registrado.");
 			model.addAttribute("clase","danger");
-
 			try{
 				if(crudservicio.findFirstByIdentificacion(votantes.getIdentificacion())!= null){
-
 				Votantes votante = crudservicio.findFirstByIdentificacion(votantes.getIdentificacion());
-				
 				model.addAttribute("votante",votante);
 				urlTemplate = "/votante";
 				}
 			}catch(java.lang.NullPointerException e){
 				System.out.print(e.getStackTrace());
 			}
-
 			return urlTemplate;
 	}
 
-	@GetMapping("/index")
-	public String index(Model model) {
-		model.addAttribute("votantes", new Votantes());
-		return "/index";
+	@RequestMapping("/index")
+	public ModelAndView index() {
+		return new ModelAndView("index");
 	}
 	@RequestMapping("/estadisticas")
 	public ModelAndView estadisticas() {
