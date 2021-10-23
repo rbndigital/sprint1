@@ -25,7 +25,6 @@ public class CrudController {
 		model.addAttribute("votantes", new Votantes());
 		try {
 			List<Votantes> listaVotantes = crudservicio.findAll();
-			
 			model.addAttribute("votantes", listaVotantes);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getCause());
@@ -33,6 +32,13 @@ public class CrudController {
 		
 		return "votantes";
 	}
+
+	@GetMapping("/modVotantes/{id}")
+		public String Editar(@PathVariable int id,Model model){
+			Optional<Votantes> votantes = crudservicio.findById(id);
+			model.addAttribute("votantes",votantes);
+			return "/modVotantes";
+		}
 
 	@GetMapping("/nuevoVotante")
 	public String addVotante(Model model) {
@@ -46,12 +52,7 @@ public class CrudController {
 		return "redirect:/votantes";
 	}
 
-	@GetMapping("/modVotantes/{id}")
-		public String Editar(@PathVariable int id,Model model){
-			Optional<Votantes> votantes = crudservicio.findById(id);
-			model.addAttribute("votantes",votantes.get());
-			return "/modVotantes";
-		}
+
 
 	@GetMapping("/eliminarVotante/{id}")
 		public String eliminar(@PathVariable int id){
