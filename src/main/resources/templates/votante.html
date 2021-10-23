@@ -33,6 +33,13 @@
     overflow: hidden;
    
   }
+  .container {
+        height: 100%;
+        margin: 0 auto;
+        min-height: 600px;
+        overflow: hidden;
+
+    }
 
   </style>
 <body>
@@ -77,23 +84,45 @@
     </div><br/>
 
         <section>
-            <div class="container sobre " style="width:900px;padding:16px;">
-                <div class="row" style="padding:0;">
-                    <div class="col-lg-8 col-md-6  col-sm-12" >
-                        <h4 th:text="${votante.Nombres}"></h4>
-                        <p th:text="${votante.identificacion}"></p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12-lg">
-                        <a class="nav-link active" aria-current="page" th:href="@{index}">
-                            <font size="5px">Volver</font>
-                        </a>   
-                    </div>
-                </div>
-            </div><br/>
+          <div class="container">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Identificación</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Número de Contacto</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Municipio</th>
+              </tr>
+            </thead>
+                <td><h6 th:text="${votante.id}"></h6></td>
+                <td><h6 th:text="${votante.Identificacion}"></h6></td>
+                <td><h6 th:text="${votante.Nombres}"></h6></td>
+                <td><h6 th:text="${votante.Apellidos}"></h6></td>
+                <td><h6 th:text="${votante.Correo}"></h6></td>
+                <td><h6 th:text="${votante.NumContacto}"></h6></td>
+                <td><h6 th:text="${votante.Direccion}"></h6></td>
+                <td><h6 th:text="${votante.Municipio}"></h6></td>
+          </table>
+          <a class="nav-link active" aria-current="page" th:href="@{index}">
+            <font size="5px">Volver</font>
+        </a>
+        </div>
+        
+        
+            
+      
         </section>
+
+
+
+
+
+
+
 
         <footer>
             <div class="container">
