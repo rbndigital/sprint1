@@ -36,7 +36,7 @@ public class CrudController {
 	@GetMapping("/modVotantes/{id}")
 		public String Editar(@PathVariable int id,Model model){
 			Optional<Votantes> votantes = crudservicio.findById(id);
-			model.addAttribute("votantes",votantes);
+			model.addAttribute("votantes",votantes.get());
 			return "/modVotantes";
 		}
 
