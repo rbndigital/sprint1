@@ -59,7 +59,7 @@ public class CrudController {
 			return "redirect:/votantes";
 	}
 	
-	@PostMapping("/buscarVotante")
+	@GetMapping("/buscarVotante")
 		public String buscarVotantePorIdentificacion(Votantes votantes,Model model){
 			String urlTemplate = "/index";
 			model.addAttribute("mensaje","Error.., el votante no esta registrado.");
