@@ -76,10 +76,9 @@ public class CrudController {
 			return urlTemplate;
 	}
 
-	@GetMapping("/index")
-	public String index(Model model) {
-		
-		return "/index";
+	@RequestMapping("/index")
+	public ModelAndView index() {
+		return new ModelAndView("index");
 	}
 	@RequestMapping("/estadisticas")
 	public ModelAndView estadisticas() {
