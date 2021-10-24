@@ -43,7 +43,7 @@ public class CrudController {
 	@GetMapping("/nuevoVotante")
 	public String addVotante(Model model) {
 		model.addAttribute("votantes", new Votantes());
-		return "/regVotantes";
+		return "regVotantes";
 	}
 	@PostMapping("/saveVotantes")
 	public String addVotantes(@Validated Votantes votantes) throws InterruptedException {
