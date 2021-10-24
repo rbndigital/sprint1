@@ -60,14 +60,14 @@ public class CrudController {
 	
 	@GetMapping("/buscarVotante")
 		public String buscarVotantePorIdentificacion(Votantes votantes,Model model){
-			String urlTemplate = "/index";
+			String urlTemplate = "index";
 			model.addAttribute("mensaje","Error.., el votante no esta registrado.");
 			model.addAttribute("clase","danger");
 			try{
 				if(crudservicio.findFirstByIdentificacion(votantes.getIdentificacion())!= null){
 				Votantes votante = crudservicio.findFirstByIdentificacion(votantes.getIdentificacion());
 				model.addAttribute("votante",votante);
-				urlTemplate = "/votante";
+				urlTemplate = "votante";
 				}
 			}catch(java.lang.NullPointerException e){
 				System.out.print(e.getStackTrace());
